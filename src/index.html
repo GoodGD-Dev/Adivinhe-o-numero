@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.scss">
+  <title>Game</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__title">
+        <h1>Jogo da Adivinhação</h1>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <main class="main">
+      <div class="main__adivinha">
+        <form action="/submit">
+          <div class="main__adivinha__title">
+            <label for="adivinhar">
+              Escolha um número de 0 a 100:
+            </label>
+          </div>
+          <div class="main__adivinha__number">
+            <input id="adivinhar" value="0" name="number" type="number" required min="0" max="100">
+          </div>
+          <div class="main__adivinha__button">
+            <button type="submit">Enviar</button>
+          </div>
+          <div class="main__adivinha__title">
+            <label for="resultado">
+              Resultado:
+            </label>
+          </div>
+          <div class="main__adivinha__result">
+            <span id="resultado">?</span>
+          </div>
+        </form>
+      </div>
+      <div class="main__resultado">
+        <span class="main__resultado__text"></span>
+      </div>
+    </main>
+  </div>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
