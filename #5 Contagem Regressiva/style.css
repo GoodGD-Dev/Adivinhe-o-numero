@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: monospace;
+}
+
+body {
+  background-color: coral;
+  font-size: clamp(0.5rem, 4vh, 2rem);
+}
+
+.panel {
+  padding: 40px 20px;
+  background-color: aquamarine;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: solid 2px black;
+  border-radius: 6px;
+  width: 60vmin;
+}
+
+input,
+button,
+.restante {
+  font-size: 5vh;
+  padding: 12px;
+  border: solid 2px black;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16vmin;
+  text-align: center;
+}
+
+.restante {
+  background-color: #fff;
+  color: #747070;
+}
+
+button:hover {
+  background-color: coral;
+  cursor: pointer;
+}
