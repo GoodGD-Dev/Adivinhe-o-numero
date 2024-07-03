@@ -12,6 +12,7 @@ let hours = 0;
 let minutes = 0;
 let seconds = 0;
 let interval;
+let test;
 
 function updateTimerDisplay() {
   const formattedTime = `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`;

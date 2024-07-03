@@ -77,9 +77,7 @@ gridButton.addEventListener("click", () => {
             div.appendChild(col);
 
         }
-
         container.appendChild(div);
-
     }
 });
 
