@@ -10,8 +10,7 @@ button,
   font-size: 4rem;
 }
 
-.result-win,
-.result-lose {
+.result-win {
   display: inline-block;
   padding: 2rem 3rem;
   font-size: 1.25rem;
@@ -20,12 +19,25 @@ button,
   text-align: center;
   font-size: 4rem;
 }
+
 .result-win,
-.alert-success {
+.alert-sucess {
   font-size: 3rem;
   color: aliceblue;
-  background-color: #70db79;
+  background-color: #198754;
 }
-.result-lose {
-  background-color: #db7070;
+
+#mensagem {
+  font-size: 3rem;
+  color: aliceblue;
+  display: block;
+}
+
+.mensagem {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mensagemView {
+  opacity: 1;
 }

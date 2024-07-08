@@ -1,65 +1,135 @@
-const pedra = document.getElementById('pedra');
-const papel = document.getElementById('papel');
-const tesoura = document.getElementById('tesoura');
+let userClick = '';
+let resultado = '';
+let resultShowAlert = document.getElementById('mensagem');
+let resultShowGame = document.getElementById('result');
+const buttons = document.querySelectorAll('button');
 
+function clickGame() {
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (button.id == 'pedra') {
+        userClick = 'pedra';
+      } else if (button.id == 'papel') {
+        userClick = 'papel';
+      } else if (button.id == 'tesoura') {
+        userClick = 'pedra';
+      }
+      randomGame();
+      resultGame(userClick, resultado);
+      console.log(resultado);
+    })
+  });
+}
 
 function randomGame() {
   let randomNum = Math.floor(Math.random() * 3);
-  console.log(randomNum);
-  let resultado = '';
 
   if (randomNum == 0) {
-    let resultado = 'pedra';
-    console.log(resultado);
+    resultado = 'pedra';
   } else if (randomNum == 1) {
-    let resultado = 'papel';
-    console.log(resultado);
+    resultado = 'papel';
   } else if (randomNum == 2) {
-    let resultado = 'tesoura';
-    console.log(resultado);
+    resultado = 'tesoura';
   }
 }
 
 function resultGame(jogador, bot) {
   if (jogador == 'pedra' && bot == 'pedra') {
-    console.log('empate');
+    resultShowAlert.classList.remove('mensagemView');
+    resultShowGame.textContent = '🪨x🪨';
+    resultShowAlert.textContent = 'Voce Empatou';
+    resultShowGame.style.backgroundColor = '#ffc107';
+    resultShowAlert.style.backgroundColor = '#ffc107';
+    resultShowAlert.classList.add('mensagemView');
+    setTimeout(() => {
+      removeAll();
+    }, 2000);
   } else if (jogador == 'pedra' && bot == 'papel') {
-    console.log('vc perdeu');
+    resultShowAlert.classList.remove('mensagemView');
+    resultShowGame.textContent = '🪨x📑';
+    resultShowAlert.textContent = 'Voce Perdeu';
+    resultShowGame.style.backgroundColor = '#dc3545';
+    resultShowAlert.style.backgroundColor = '#dc3545';
+    resultShowAlert.classList.add('mensagemView');
+    setTimeout(() => {
+      removeAll();
+    }, 2000);
   } else if (jogador == 'pedra' && bot == 'tesoura') {
-    console.log('vc ganhou');
+    resultShowAlert.classList.remove('mensagemView');
+    resultShowGame.textContent = '🪨x✂️';
+    resultShowAlert.textContent = 'Voce Ganhou';
+    resultShowGame.style.backgroundColor = '#198754';
+    resultShowAlert.style.backgroundColor = '#198754';
+    resultShowAlert.classList.add('mensagemView');
+    setTimeout(() => {
+      removeAll();
+    }, 2000);
   } else if (jogador == 'papel' && bot == 'pedra') {
-    console.log('vc ganhou');
+    resultShowGame.textContent = '📑x🪨';
+    resultShowAlert.textContent = 'Voce Ganhou';
+    resultShowAlert.classList.remove('mensagemView');
+    resultShowGame.style.backgroundColor = '#198754';
+    resultShowAlert.style.backgroundColor = '#198754';
+    resultShowAlert.classList.add('mensagemView');
+    setTimeout(() => {
+      removeAll();
+    }, 2000);
   } else if (jogador == 'papel' && bot == 'papel') {
-    console.log('empate');
+    resultShowGame.textContent = '📑x📑';
+    resultShowAlert.textContent = 'Voce Empatou';
+    resultShowAlert.classList.remove('mensagemView');
+    resultShowGame.style.backgroundColor = '#ffc107';
+    resultShowAlert.style.backgroundColor = '#ffc107';
+    resultShowAlert.classList.add('mensagemView');
+    setTimeout(() => {
+      removeAll();
+    }, 2000);
   } else if (jogador == 'papel' && bot == 'tesoura') {
-    console.log('vc perdeu');
+    resultShowGame.textContent = '📑x✂️';
+    resultShowAlert.textContent = 'Voce Perdeu';
+    resultShowAlert.classList.remove('mensagemView');
+    resultShowGame.style.backgroundColor = '#dc3545';
+    resultShowAlert.style.backgroundColor = '#dc3545';
+    resultShowAlert.classList.add('mensagemView');
+    setTimeout(() => {
+      removeAll();
+    }, 2000);
   } else if (jogador == 'tesoura' && bot == 'pedra') {
-    console.log('vc perdeu');
+    resultShowGame.textContent = '✂️x🪨';
+    resultShowAlert.textContent = 'Voce Perdeu';
+    resultShowAlert.classList.remove('mensagemView');
+    resultShowGame.style.backgroundColor = '#dc3545';
+    resultShowAlert.style.backgroundColor = '#dc3545';
+    resultShowAlert.classList.add('mensagemView');
+    setTimeout(() => {
+      removeAll();
+    }, 2000);
   } else if (jogador == 'tesoura' && bot == 'papel') {
-    console.log('vc ganhou');
+    resultShowGame.textContent = '✂️x📑';
+    resultShowAlert.textContent = 'Voce Ganhou';
+    resultShowAlert.classList.remove('mensagemView');
+    resultShowGame.style.backgroundColor = '#198754';
+    resultShowAlert.style.backgroundColor = '#198754';
+    resultShowAlert.classList.add('mensagemView');
+    setTimeout(() => {
+      removeAll();
+    }, 2000);
   } else if (jogador == 'tesoura' && bot == 'tesoura') {
-    console.log('empatou');
+    resultShowGame.textContent = '✂️x✂️';
+    resultShowAlert.textContent = 'Voce Empatou';
+    resultShowAlert.classList.remove('mensagemView');
+    resultShowGame.style.backgroundColor = '#ffc107';
+    resultShowAlert.style.backgroundColor = '#ffc107';
+    resultShowAlert.classList.add('mensagemView');
+    setTimeout(() => {
+      removeAll();
+    }, 2000);
   }
 }
 
-function click(botao) {
-  botao.addEventListener('click', () => {
-    let botaoId = botao.id;
-    let userClick = '';
-
-    if (botao.id == pedra) {
-      userClick = 'pedra';
-    } else if (botaoId == papel) {
-      userClick = 'papel';
-    } else if (botaoId == tesoura) {
-      userClick = 'tesoura';
-    };
-    console.log(userClick);
-    randomGame();
-
-  })
+function removeAll() {
+  resultShowAlert.classList.remove('mensagemView');
 }
 
-click(pedra);
-click(papel);
-click(tesoura);
+clickGame();
