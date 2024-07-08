@@ -1,0 +1,9 @@
+.container {
+  background-color: #ec63b3;
+}
+
+input {
+  border: solid 2px black;
+  border-radius: 8px;
+  width: 30%;
+}

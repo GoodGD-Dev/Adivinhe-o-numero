@@ -13,7 +13,7 @@ function clickGame() {
       } else if (button.id == 'papel') {
         userClick = 'papel';
       } else if (button.id == 'tesoura') {
-        userClick = 'pedra';
+        userClick = 'tesoura';
       }
       randomGame();
       resultGame(userClick, resultado);
